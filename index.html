@@ -7,5 +7,32 @@
 <body>
   <h1>Bienvenido a nuestro Consultorio Odontológico</h1>
   <p>Especialistas en salud dental. Reserva tu cita y haz tu pago en línea próximamente.</p>
+
+  <h2>Agenda tu cita</h2>
+  <form id="form-cita" onsubmit="enviarCita(event)">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+    
+    <label for="correo">Correo electrónico:</label><br>
+    <input type="email" id="correo" name="correo" required><br><br>
+    
+    <label for="fecha">Fecha:</label><br>
+    <input type="date" id="fecha" name="fecha" required><br><br>
+    
+    <label for="hora">Hora:</label><br>
+    <input type="time" id="hora" name="hora" required><br><br>
+    
+    <button type="submit">Agendar cita</button>
+  </form>
+
+  <p id="mensaje-cita" style="color: green;"></p>
+
+  <script>
+    function enviarCita(event) {
+      event.preventDefault();
+      document.getElementById('mensaje-cita').textContent = "¡Cita agendada (simulada)! Pronto te contactaremos por correo.";
+      document.getElementById('form-cita').reset();
+    }
+  </script>
 </body>
 </html>
